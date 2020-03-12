@@ -48,6 +48,6 @@ require("dotenv").config();
 
 ### Study Document
 
-| Title         | Document                                                                                           |
-| ------------- | -------------------------------------------------------------------------------------------------- |
-| Basic Graphql | [Document](https://github.com/Kwon770/react-styled-components/blob/master/MD%20Document/styled.md) |
+| Title         | Document                                                                                     |
+| ------------- | -------------------------------------------------------------------------------------------- |
+| Basic Graphql | [Document](https://github.com/Kwon770/instagram-clone/blob/master/document/basic-graphql.md) |
