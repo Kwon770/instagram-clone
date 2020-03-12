@@ -1,4 +1,4 @@
-// There is lot of graphql and resolvers files
+// There is lot of graphql and resolvers files in api folder
 // And They will be combined from here
 import { makeExecutableSchema } from "graphql-tools";
 import { fileLoader, mergeResolvers, mergeTypes } from "merge-graphql-schemas";
