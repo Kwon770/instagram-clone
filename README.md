@@ -3,13 +3,17 @@
 ## Setup
 
 ```bash
-$ yarn add graphql-yoga dotenv
+$ yarn add graphql-yoga dotenv morgan graphql-tools merge-graphql-schemas
 $ yarn add nodemon babel-node @babel/node @babel/preset-env @babel/core
 ```
 
-- nodemon: The tool to execute saved file without restarting server
-- dotenv: The tool to read .env file
-- babel-node: The tool to convert code to be compatible
+- nodemon: Execute saved file without restarting server
+- dotenv: Read .env file
+- morgan: Logger, To Monitor server pulling
+- graphql-tools merge-graphql-schemas: The tool what is needed to manage lot of files related with graphql [Reference](https://github.com/Kwon770/instagram-clone/blob/master/src/server.js)
+- babel-node: Convert code to be compatible
+
+### nodemon || babel
 
 ```json
 // package.json
@@ -35,7 +39,11 @@ $ yarn add nodemon babel-node @babel/node @babel/preset-env @babel/core
 }
 ```
 
+### dotenv
+
 ```js
 // server.js
 require("dotenv").config();
 ```
+
+### Study Document
