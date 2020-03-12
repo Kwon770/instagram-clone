@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 4000;
 
 const server = new GraphQLServer({ schema });
 
+// Graphql has express => you can use express by graphql
 server.express.use(logger("dev"));
 
 server.start({ port: PORT }, () =>
