@@ -22,7 +22,7 @@ prisma.yml; // the files that have private server information
 ## Prisma Introduction
 
 - `id: ID! @id` : Must add this code at each type
-- `@ userName` `@email` : This mean this is **unique**
+- `@unique` `@unique` : This mean this is **unique**
 - `userName: String!` `bio: String` : **String!** is necessary **String** is unnecessary
 - `@default(value: "")` : Set default value
 - `@relation(name: "FollowRelation")` : Set each other's relation
@@ -33,8 +33,8 @@ automatically **A** is added to following of **B**.
 ```graphql
 type User {
   id: ID! @id
-  userName: String! @userName
-  email: String! @email
+  userName: String! @unique
+  email: String! @unique
   firstName: String @default(value: "")
   lastName: String
   bio: String
@@ -48,6 +48,10 @@ type User {
 ```
 
 ## Intergrating Prisma in Server with graphql
+
+### There is no tool to connect datamodel between prisma and graphql
+
+### So, if you want add new datamodel, you must add new model to Prisma and copy/paste to graphql
 
 ### File Structure
 
