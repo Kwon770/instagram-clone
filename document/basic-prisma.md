@@ -51,6 +51,8 @@ type User {
 
 ### File Structure
 
+![](file-structure.jpg)
+
 ### Data Model
 
 `datamodel.graphql` must not have prisma gramer like `@id`. Graphql didn't support.
