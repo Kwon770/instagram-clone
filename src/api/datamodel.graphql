@@ -11,6 +11,7 @@ type User {
   followers: [User!]!
   following: [User!]!
   rooms: [Room!]!
+  loginSecret: String
 }
 
 type Post {
