@@ -48,8 +48,8 @@ require("dotenv").config();
 
 ### Study Document
 
-| Title         | Document                                                                                     |
-| ------------- | -------------------------------------------------------------------------------------------- |
-| Basic Graphql | [Document](https://github.com/Kwon770/instagram-clone/blob/master/document/basic-graphql.md) |
-| ------------- | -------------------------------------------------------------------------------------------- |
-| Basic Graphql | [Document](https://github.com/Kwon770/instagram-clone/blob/master/document/basic-prisma.md)  |
+| Title         | Document                                |
+| ------------- | --------------------------------------- |
+| Basic Graphql | [Document](./document/basic-graphql.md) |
+| Basic Prisma  | [Document](./document/basic-prisma.md)  |
+| Graphql Apu   | [Document](./document/graphql-api.md)   |
