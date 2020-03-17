@@ -4,7 +4,11 @@
 
 ```js
 // To read .env file
-require("dotenv").config();
+// require("dotenv").config();
+// Default path of 'config()' is the folder of project, so must change
+import dotenv from "dotenv";
+import path from "path";
+dotenv.config({ path: path.resolve(__dirname, ".env") });
 import { GraphQLServer } from "graphql-yoga";
 import logger from "morgan";
 import schema from "./schema";
