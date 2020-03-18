@@ -23,10 +23,10 @@ export const sendMail = email => {
 
 export const sendSecretMail = (address, secret) => {
   const email = {
-    from: "sckwon770@instaclone.com",
+    from: "sketom77@instaclone.com",
     to: address,
-    subject: "🔒Login Secret for instagram-clone 🔒",
-    html: `Hello! Your login secret it ${secret}.<br/>Copy and Paste on the app/website to log in`
+    subject: "🔒 Login Secret for instagram-clone 🔒",
+    html: `Hello! Your login secret it <strong>${secret}</strong>.<br/>Copy and Paste on the app/website to log in`
   };
   return sendMail(email);
 };
