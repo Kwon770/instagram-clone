@@ -4,6 +4,9 @@ dotenv.config({ path: path.resolve(__dirname, ".env") });
 import { adjectives, nouns } from "./words";
 import nodemailer from "nodemailer";
 import sgTransport from "nodemailer-sendgrid-transport";
+import { ExtractJwt } from "passport-jwt";
+// https://www.npmjs.com/package/jsonwebtoken
+import jwt from "jsonwebtoken";
 
 export const GenerateSecret = () => {
   const randomNumber = Math.floor(Math.random() * adjectives.length);
@@ -30,3 +33,6 @@ export const sendSecretMail = (address, secret) => {
   };
   return sendMail(email);
 };
+
+// Return encrypted id string
+export const GenerateToken = id => jwt.sign({ id }, process.env.JWT_SECRET);
