@@ -52,4 +52,4 @@ require("dotenv").config();
 | ------------- | --------------------------------------- |
 | Basic Graphql | [Document](./document/basic-graphql.md) |
 | Basic Prisma  | [Document](./document/basic-prisma.md)  |
-| Graphql Apu   | [Document](./document/graphql-api.md)   |
+| Graphql Api   | [Document](./document/graphql-api.md)   |
