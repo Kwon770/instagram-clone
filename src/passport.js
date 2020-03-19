@@ -1,6 +1,3 @@
-import dotenv from "dotenv";
-import path from "path";
-dotenv.config({ path: path.resolve(__dirname, ".env") });
 import { prisma } from "../generated/prisma-client";
 // http://www.passportjs.org/packages/passport-jwt/
 import passport from "passport";
@@ -31,4 +28,15 @@ const verifyUser = async (payload, done) => {
   }
 };
 
+export const authenticateJwt = (req, res, next) => {
+  // sessions: false => Don't input anything to passport from this function
+  passport.authenticate("jwt", { sessions: false }, (error, user) => {
+    if (user) {
+      req.user = user;
+    }
+    next();
+  })(req, res, next);
+};
+
 passport.use(new Strategy(jwtOptions, verifyUser));
+passport.initialize();
