@@ -44,8 +44,8 @@ export const sendSecretMail = (address, secret) => {
 ```env
 # .env
 
-SENDGRID_USERNAME="sckwon"
-SENDGRID_PASSWORD="fubdoB-3fekqy-jurbih"
+SENDGRID_USERNAME=""
+SENDGRID_PASSWORD=""
 ```
 
 ## Manage Token with PassportJS
@@ -67,7 +67,7 @@ import { Strategy, ExtractJwt } from "passport-jwt";
 
 ```env
 # .env
-JWT_SECRET="vSdkCnflCQmGeLwDMYeaD0vfnDAVVXJK
+JWT_SECRET=""
 ```
 
 ```js
@@ -116,3 +116,5 @@ $ yarn add jsonwebtoken
 import jwt from "jsonwebtoken";
 export const GenerateToken = id => jwt.sign({ id }, process.env.JWT_SECRET);
 ```
+
+## 

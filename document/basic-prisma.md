@@ -28,7 +28,7 @@ prisma.yml; // the files that have private server information
 - `@relation(name: "FollowRelation")` : Set each other's relation
 
 In this case, If you add **B** to followers of **A**,
-automatically **A** is added to following of **B**.
+automatically **A** is added to the following of **B**.
 
 ```graphql
 type User {
@@ -47,11 +47,11 @@ type User {
 }
 ```
 
-## Intergrating Prisma in Server with graphql
+## Integrating Prisma in Server with GraphQL
 
-### There is no tool to connect datamodel between prisma and graphql
+### There is no tool to connect DataModel between Prisma and GraphQL
 
-### So, if you want add new datamodel, you must add new model to Prisma and copy/paste to graphql
+### So, if you want add new DataModel, you must add new model to Prisma and copy/paste to GraphQL
 
 ### File Structure
 
