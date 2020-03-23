@@ -1,4 +1,4 @@
-# Graphql Api
+# Graphql API
 
 ## Send Mail with NodeMailer and SendGrid
 
@@ -117,4 +117,21 @@ import jwt from "jsonwebtoken";
 export const GenerateToken = id => jwt.sign({ id }, process.env.JWT_SECRET);
 ```
 
-## 
+## Server Flow
+
+**server.js** <br>
+서버에 전잘되는 모든 요청은 server.press.use()로 등록된 autheniticate.Jwt() 함수(미들웨이) 통과 <br>
+-> <br>
+**passport.js** <br>
+authenticateJwt() 에소는 passport.authenticate("jwt", _, _) \<첫번째 인자> 실행 <br>
+-> <br>
+passport.use(new Strategy(jwtOptions, verifyUser)) 으로 토근 추출 <br>
+-> <br>
+토근이 추출되면 verifyUser가 payload와 함께 실행 -> payload는 토큰에서 해석된 id를 받아서 user를 찾고 리턴 <br>
+-> <br>
+passport.authenticagte(_, _, (error, user)=>{ ... }) \<세번째 인자> 실행 <br>
+콜백 함수가 실행되서 사용자가 있으면 requestDP user추가 <br>
+-> <br>
+**server.js** <br>
+const server = new GraphQlServer({\_, contest: ({requesr} : {request})}) <br>
+context에 request를 담음 (request에 관련되 작업이므로) <br>
