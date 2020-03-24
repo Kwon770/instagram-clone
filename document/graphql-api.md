@@ -120,10 +120,10 @@ export const GenerateToken = id => jwt.sign({ id }, process.env.JWT_SECRET);
 ## Server Flow
 
 **server.js** <br>
-서버에 전잘되는 모든 요청은 server.press.use()로 등록된 autheniticate.Jwt() 함수(미들웨이) 통과 <br>
+서버에 전잘되는 모든 요청은 server.press.use()로 등록된 autheniticateJwt() 함수(미들웨이) 통과 <br>
 -> <br>
 **passport.js** <br>
-authenticateJwt() 에소는 passport.authenticate("jwt", _, _) \<첫번째 인자> 실행 <br>
+authenticateJwt() 에서 passport.authenticate("jwt", _, _) \<첫번째 인자> 실행 <br>
 -> <br>
 passport.use(new Strategy(jwtOptions, verifyUser)) 으로 토근 추출 <br>
 -> <br>
