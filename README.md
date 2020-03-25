@@ -15,25 +15,28 @@ $ yarn add nodemon babel-node @babel/node @babel/preset-env @babel/core
 
 ### nodemon || babel
 
+Execute server.js with babel-node
+
 ```json
 // package.json
 "scripts": {
-    // execute server.js with babel-node
     "dev": "nodemon --exec babel-node src/server.js"
   }
 ```
 
+nodemon 감시할 파일의 확장자 지정
+
 ```json
 // nodemon.json
-// nodemon 감시할 파일의 확장자 지정
 {
   "ext": "js graphql"
 }
 ```
 
+To make node detect import (import { GraphQLServer } from "graphql-yoga";)
+
 ```json
 // .babelrc
-// To make node detect import (import { GraphQLServer } from "graphql-yoga";)
 {
   "presets": ["@babel/preset-env"]
 }
