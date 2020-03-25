@@ -2,7 +2,7 @@
 
 ## Setup
 
-Sign up Prisma and follow the guideline, making the new service from account
+__Sign up Prisma and follow the guideline, making the new service from account__
 
 ```js
 // .gitignore
