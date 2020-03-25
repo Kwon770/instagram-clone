@@ -7,33 +7,36 @@ $ yarn add graphql-yoga dotenv morgan graphql-tools merge-graphql-schemas
 $ yarn add nodemon babel-node @babel/node @babel/preset-env @babel/core
 ```
 
-- nodemon: Execute saved file without restarting server
+- nodemon: Execute saved file without restarting the server
 - dotenv: Read .env file
 - morgan: Logger, To Monitor server pulling
-- graphql-tools merge-graphql-schemas: The tool what is needed to manage lot of files related with graphql [Reference](https://github.com/Kwon770/instagram-clone/blob/master/src/server.js)
+- graphql-tools merge-graphql-schemas: The tool what is needed to manage a lot of files related to GraphQL [Reference](https://github.com/Kwon770/instagram-clone/blob/master/src/server.js)
 - babel-node: Convert code to be compatible
 
 ### nodemon || babel
 
+Execute server.js with babel-node
+
 ```json
 // package.json
 "scripts": {
-    // execute server.js with babel-node
     "dev": "nodemon --exec babel-node src/server.js"
   }
 ```
 
+nodemon 감시할 파일의 확장자 지정
+
 ```json
 // nodemon.json
-// nodemon 감시할 파일의 확장자 지정
 {
   "ext": "js graphql"
 }
 ```
 
+To make node detect import (import { GraphQLServer } from "graphql-yoga";)
+
 ```json
 // .babelrc
-// To make node detect import (import { GraphQLServer } from "graphql-yoga";)
 {
   "presets": ["@babel/preset-env"]
 }

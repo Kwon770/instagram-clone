@@ -2,7 +2,7 @@
 
 ## Setup
 
-__Sign up Prisma and follow the guideline, making the new service from account__
+**Sign up Prisma and follow the guideline, making the new service from account**
 
 ```js
 // .gitignore
@@ -51,7 +51,7 @@ type User {
 
 ### There is no tool to connect DataModel between Prisma and GraphQL
 
-### So, if you want add new DataModel, you must add new model to Prisma and copy/paste to GraphQL
+### So, if you want to add new DataModel, you must add a new model to Prisma and copy/paste to GraphQL
 
 ### File Structure
 
@@ -59,7 +59,7 @@ type User {
 
 ### Data Model
 
-`datamodel.graphql` must not have prisma gramer like `@id`. Graphql didn't support.
+`datamodel.graphql` must not have code written by Prisma-Grammer like `@id`. Graphql didn't support.
 
 ```graphql
 type User {
@@ -78,7 +78,7 @@ type User {
 }
 ```
 
-## Using Prisma from graphql resolver
+## Using Prisma from GraphQL resolver
 
 ```js
 import { prisma } from "../../../../generated/prisma-client";
