@@ -186,3 +186,38 @@ export default {
   }
 };
 ```
+
+## Return promise from Resolver
+
+promise 를 return 과 함께 수행할시 마지막 statement이므로, 서버에서 자동으로 resolve 되서 결과가 전달되기를 기다림
+
+```js
+export default {
+  Mutation: {
+    editUser: async (_, args, { request, isAuthenticated }) => {
+      // ~~
+      // ~~
+      return prisma.updateUser({
+        where: { id: user.id },
+        data: { username, email, firstName, lastName, bio }
+      });
+    }
+  }
+};
+```
+
+```js
+export default {
+  Mutation: {
+    editUser: async (_, args, { request, isAuthenticated }) => {
+      // ~~
+      // ~~
+      const user = await prisma.updateUser({
+        where: { id: user.id },
+        data: { username, email, firstName, lastName, bio }
+      });
+      return user;
+    }
+  }
+};
+```
