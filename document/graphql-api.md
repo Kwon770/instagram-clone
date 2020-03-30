@@ -138,16 +138,15 @@ context에 request를 담음 (request에 관련되 작업이므로) <br>
 
 ## Prisma Grammer
 
-__! You can find a lot of function which is made automatically according to Data-Model !__
-__! You can use them. Check From Playground !__
+**! You can find a lot of function which is made automatically according to Data-Model !**
+**! You can use them. Check From Playground !**
 
 ```js
-import { isAuthenticated } from "../../../middleawares";
 import { prisma } from "../../../../generated/prisma-client";
 
 export default {
   Mutation: {
-    follow: async (_, args, { request }) => {
+    follow: async (_, args, { request, isAuthenticated }) => {
       isAuthenticated(request);
       const { id } = args;
       const { user } = request;
@@ -166,12 +165,11 @@ export default {
 ```
 
 ```js
-import { isAuthenticated } from "../../../middleawares";
 import { prisma } from "../../../../generated/prisma-client";
 
 export default {
   Mutation: {
-    unfollow: async (_, args, { request }) => {
+    unfollow: async (_, args, { request, isAuthenticated }) => {
       isAuthenticated(request);
       const { id } = args;
       const { user } = request;
