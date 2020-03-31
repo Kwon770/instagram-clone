@@ -221,3 +221,66 @@ export default {
   }
 };
 ```
+
+## Using Fragment
+
+[Why we should use `$fragment`](https://github.com/Kwon770/instagram-clone/blob/master/document/basic-prisma.md#fragment-for-prevent-error)
+
+**If you will request data in data of data, you must use**
+
+This is Query you must handle. It request userName in user of comments.
+
+```
+{
+  seeFullPost(id: "ck7v25ea22vhu0981qbc4qdv2") {
+    post {
+      location
+    }
+    comments {
+      id
+      text
+      user {
+        userName
+      }
+    }
+    likeCount
+  }
+}
+```
+
+```js
+// fragment.js
+export const COMMENT_FRAGMENT = `
+    fragment CommentParts on Comment {
+        id
+        text
+        user {
+            userName
+        }
+    }
+`;
+```
+
+```js
+export default {
+  Query: {
+    seeFullPost: async (_, args) => {
+      const { id } = args;
+      const post = await prisma.post({ id });
+      const comments = await prisma
+        .post({ id })
+        .comments()
+        .$fragment(COMMENT_FRAGMENT); // FRAGMENT
+      const likeCount = await prisma
+        .likesConnection({ where: { post: { id } } })
+        .aggregate()
+        .count();
+      return {
+        post,
+        comments,
+        likeCount
+      };
+    }
+  }
+};
+```
