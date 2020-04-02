@@ -228,7 +228,7 @@ export default {
 
 **If you will request data in data of data, you must use**
 
-This is Query you must handle. It request userName in user of comments.
+This is the Query you must handle. It request userName in user of comments.
 
 ```
 {
@@ -283,4 +283,78 @@ export default {
     }
   }
 };
+```
+
+## Computed Field in Prisma
+
+Computed Field is the virtual field what is computed. There is no computed field in the DB.
+
+### Usage
+
+1. Add a field in DataModel of graphql __(NOT DATAMODEL OF PRISMA)__
+2. Add a resolver in a file what is related to this resolver __(It doesn't matter where you add it. The schema will combine all resolver at once)__
+
+### Example
+
+fullName is the computed field
+
+```graphql
+type User {
+  firstName: String
+  lastName: String
+  fullName: String
+}
+```
+
+Because me and user resolver will do the authenticated method, fullName field don't have to do it.
+
+So fullName only need a parent parameter `(_, __, {request})` => `(_)` => `(parent)`
+
+```js
+// me.js
+
+export default {
+  Query: {
+    me: async (_, __, { request, isAuthenticated }) => {
+      isAuthenticated(request);
+      const { user } = request;
+      const userProfile = await prisma.user({ id: user.id });
+      const posts = await prisma.user({ id: user.id }).posts();
+      //  return prisma.user({ id: user.id }).$fragment(USER_FRAGMENT);
+      return {
+        user: userProfile,
+        posts
+      };
+    }
+  },
+  User: {
+    fullName: parent => {
+      return `${parent.firstName} ${parent.lastName}`;
+    }
+  }
+};
+``` 
+
+parent parameter is the resolver what call fullName, computed field.
+
+In this case, parent is the user in me resolver
+```
+{
+  me {
+    user {
+      fullName
+    }
+  }
+}
+```
+
+In this case, parent is the user in seeUser resolver
+```
+{
+  seeUser(id: "~~~") {
+    user {
+      fullName
+    }
+  }
+}
 ```
