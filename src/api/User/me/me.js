@@ -14,5 +14,10 @@ export default {
         posts
       };
     }
+  },
+  User: {
+    fullName: parent => {
+      return `${parent.firstName} ${parent.lastName}`;
+    }
   }
 };
