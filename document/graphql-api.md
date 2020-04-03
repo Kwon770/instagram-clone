@@ -292,7 +292,7 @@ Computed Field is the virtual field what is computed. There is no computed field
 ### Usage
 
 1. Add a field in DataModel of graphql __(NOT DATAMODEL OF PRISMA)__
-2. Add a resolver in a file what is related to this resolver __(It doesn't matter where you add it. The schema will combine all resolver at once)__
+2. Add a resolver __(It doesn't matter where you add it. The schema will combine all resolver at once)__
 
 ### Example
 
