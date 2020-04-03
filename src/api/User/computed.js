@@ -5,22 +5,20 @@ export default {
     fullName: parent => {
       return `${parent.firstName} ${parent.lastName}`;
     },
-    amIFollowing: async (parent, _, { request }) => {
+    // parent: target to check // request.user : me, the user who is login with authenticated token
+    isFollowing: (parent, _, { request }) => {
       const { user } = request;
       // parentId라고 불리는 variable 에 id를 넣는 방법
       const { id: parentId } = parent;
       try {
-        const exists = await prisma.$exists.user({
-          AND: [{ id: parentId }, { followers_some: [user.id] }]
+        return prisma.$exists.user({
+          AND: [{ id: parentId }, { followers_some: { id: user.id } }]
         });
-        if (exists) return true;
-        else return false;
-      } catch (error) {
-        console.log(error);
+      } catch {
         return false;
       }
     },
-    itsMe: (parent, _, { request }) => {
+    itsSelf: (parent, _, { request }) => {
       const { user } = request;
       const { id: parentId } = parent;
       return user.id === parentId;
