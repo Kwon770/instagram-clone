@@ -5,6 +5,7 @@ export default {
   Query: {
     seeFullPost: (_, args) => {
       const { id } = args;
+<<<<<<< HEAD
       const post = await prisma.post({ id });
       const comments = await prisma
         .post({ id })
@@ -21,4 +22,9 @@ export default {
       };
     }
   }
+=======
+      return prisma.post({ id }).$fragment(FULL_POST_FRAGMENT);
+    },
+  },
+>>>>>>> 60a9dcf9c0a8eeb24cd64d6c4eb31f11cff8ec2b
 };
