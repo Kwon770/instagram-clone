@@ -13,8 +13,8 @@ export default {
       // 과 같음
       return prisma.updateUser({
         where: { id: user.id },
-        data: { username, email, firstName, lastName, bio }
+        data: { username, email, firstName, lastName, bio },
       });
-    }
-  }
+    },
+  },
 };
