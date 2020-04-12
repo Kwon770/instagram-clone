@@ -6,15 +6,13 @@ export default {
     seeRooms: (_, __, { request, isAuthenticated }) => {
       isAuthenticated(request);
       const { user } = request;
-      return prisma
-        .rooms({
-          where: {
-            participants_some: {
-              id: user.id
-            }
+      return prisma.rooms({
+        where: {
+          participants_some: {
+            id: user.id
           }
-        })
-        .$fragment(ROOM_FRAGMENT);
+        }
+      });
     }
   }
 };

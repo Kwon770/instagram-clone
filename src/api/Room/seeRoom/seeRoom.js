@@ -13,7 +13,7 @@ export default {
         }
       });
       if (canSee) {
-        return prisma.room({ id }).$fragment(ROOM_FRAGMENT);
+        return prisma.room({ id });
       } else {
         throw Error("You can't see this");
       }
