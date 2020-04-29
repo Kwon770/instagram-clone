@@ -13,22 +13,21 @@ export default {
         AND: [
           {
             user: {
-              id: user.id
-            }
+              id: user.id,
+            },
           },
           {
             post: {
-              id
-            }
-          }
-        ]
+              id,
+            },
+          },
+        ],
       });
     },
-    likeCount: parent => {
+    likeCount: (parent) =>
       prisma
         .likesConnection({ where: { post: { id: parent.id } } })
         .aggregate()
-        .count();
-    }
-  }
+        .count(),
+  },
 };

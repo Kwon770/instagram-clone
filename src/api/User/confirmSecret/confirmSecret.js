@@ -10,14 +10,14 @@ export default {
         await prisma.updateUser({
           where: { id: user.id },
           data: {
-            loginSecret: ""
-          }
+            loginSecret: "",
+          },
         });
         // JWT Tokent
         return GenerateToken(user.id);
       } else {
         throw Error("Wrong email/secret combination");
       }
-    }
-  }
+    },
+  },
 };
