@@ -2,7 +2,7 @@ type User {
   id: ID! @id
   avatar: String
     @default(
-      value: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.nytimes.com%2F2016%2F10%2F18%2Fus%2Fcampaign-aims-to-help-pepe-the-frog-shed-its-image-as-hate-symbol.html&psig=AOvVaw1WzrlbnIjSXn4FDfK47fuE&ust=1588381364528000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLC8_e27kekCFQAAAAAdAAAAABAE"
+      value: "https://static01.nyt.com/images/2016/09/28/us/17xp-pepethefrog_web1/28xp-pepefrog-articleLarge.jpg?quality=90&auto=webp"
     )
   userName: String! @unique
   email: String! @unique
