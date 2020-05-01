@@ -2,7 +2,7 @@ type User {
   id: ID! @id
   avatar: String
     @default(
-      value: "https://scontent-hkg3-1.cdninstagram.com/vp/51ea9f9……74447047_1561961433825017856_n.jpg?_nc_ht=scontent-hkg3-1.cdninstagram.com"
+      value: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.nytimes.com%2F2016%2F10%2F18%2Fus%2Fcampaign-aims-to-help-pepe-the-frog-shed-its-image-as-hate-symbol.html&psig=AOvVaw1WzrlbnIjSXn4FDfK47fuE&ust=1588381364528000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLC8_e27kekCFQAAAAAdAAAAABAE"
     )
   userName: String! @unique
   email: String! @unique
