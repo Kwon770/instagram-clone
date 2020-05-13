@@ -18,7 +18,7 @@ export default {
         .usersConnection({ where: { following_none: { id } } })
         .aggregate()
         .count(),
-    fullName: parent => {
+    fullName: (parent) => {
       return `${parent.firstName} ${parent.lastName}`;
     },
     // parent: target to check // request.user : me, the user who is login with authenticated token
@@ -28,16 +28,16 @@ export default {
       const { id: parentId } = parent;
       try {
         return prisma.$exists.user({
-          AND: [{ id: parentId }, { followers_some: { id: user.id } }]
+          AND: [{ id: parentId }, { followers_some: { id: user.id } }],
         });
       } catch {
         return false;
       }
     },
-    itsSelf: (parent, _, { request }) => {
+    isSelf: (parent, _, { request }) => {
       const { user } = request;
       const { id: parentId } = parent;
       return user.id === parentId;
-    }
-  }
+    },
+  },
 };
