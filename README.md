@@ -1,4 +1,28 @@
-# Instagram Clone | 🖥Web and 📱App
+# Instagram Clone | 🤖Server 
+
+## Tech Stack
+
+|                  GraphQl Yoga                  |                    Apollo                     |                     Prisma                     |
+| :--------------------------------------------: | :-------------------------------------------: | :--------------------------------------------: |
+| <img src="./document/gq-yoga.png" width="200"> | <img src="./document/apollo.png" width="200"> | <img src="./document/prisma.jpeg" width="200"> |
+
+|                   AWS S3                   |                     Heroku                     |                    Netlify                     |
+| :----------------------------------------: | :--------------------------------------------: | :--------------------------------------------: |
+| <img src="./document/aws.png" width="200"> | <img src="./document/heroku.jpeg" width="200"> | <img src="./document/netlify.png" width="200"> |
+
+|                    Passport                     |                    Sendgrid                     |
+| :---------------------------------------------: | :---------------------------------------------: |
+| <img src="./document/passport.png" width="200"> | <img src="./document/sendgrid.png" width="200"> |
+
+
+## Study Document
+
+| Title         | Document                                |
+| ------------- | --------------------------------------- |
+| Basic Graphql | [Document](./document/basic-graphql.md) |
+| Basic Prisma  | [Document](./document/basic-prisma.md)  |
+| Graphql Api   | [Document](./document/graphql-api.md)   |
+
 
 ## Setup
 
@@ -48,11 +72,3 @@ To make node detect import (import { GraphQLServer } from "graphql-yoga";)
 // server.js
 require("dotenv").config();
 ```
-
-### Study Document
-
-| Title         | Document                                |
-| ------------- | --------------------------------------- |
-| Basic Graphql | [Document](./document/basic-graphql.md) |
-| Basic Prisma  | [Document](./document/basic-prisma.md)  |
-| Graphql Api   | [Document](./document/graphql-api.md)   |
