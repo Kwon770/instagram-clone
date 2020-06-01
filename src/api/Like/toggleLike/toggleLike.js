@@ -10,30 +10,32 @@ export default {
         AND: [
           {
             user: {
-              id: user.id
-            }
+              id: user.id,
+            },
           },
           {
             post: {
-              id: postId
-            }
-          }
-        ]
+              id: postId,
+            },
+          },
+        ],
       };
       try {
         const existingLike = await prisma.$exists.like(filterOptions);
+        console.log(existingLike);
         if (existingLike) {
           await prisma.deleteManyLikes(filterOptions);
         } else {
           await prisma.createLike({
             user: { connect: { id: user.id } },
-            post: { connect: { id: postId } }
+            post: { connect: { id: postId } },
           });
         }
         return true;
       } catch {
+        console.log("error");
         return false;
       }
-    }
-  }
+    },
+  },
 };

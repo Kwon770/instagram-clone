@@ -1,4 +1,4 @@
-# Instagram Clone | 🤖Server 
+# Instagram Clone | 🤖Server
 
 ## Tech Stack
 
@@ -14,7 +14,6 @@
 | :---------------------------------------------: | :---------------------------------------------: |
 | <img src="./document/passport.png" width="200"> | <img src="./document/sendgrid.png" width="200"> |
 
-
 ## Study Document
 
 | Title         | Document                                |
@@ -23,12 +22,11 @@
 | Basic Prisma  | [Document](./document/basic-prisma.md)  |
 | Graphql Api   | [Document](./document/graphql-api.md)   |
 
-
 ## Setup
 
 ```bash
 $ yarn add graphql-yoga dotenv morgan graphql-tools merge-graphql-schemas
-$ yarn add nodemon babel-node @babel/node @babel/preset-env @babel/core
+$ yarn add nodemon babel-node @babel/node @babel/preset-env @babel/core multer
 ```
 
 - nodemon: Execute saved file without restarting the server
@@ -36,6 +34,7 @@ $ yarn add nodemon babel-node @babel/node @babel/preset-env @babel/core
 - morgan: Logger, To Monitor server pulling
 - graphql-tools merge-graphql-schemas: The tool what is needed to manage a lot of files related to GraphQL [Reference](https://github.com/Kwon770/instagram-clone/blob/master/src/server.js)
 - babel-node: Convert code to be compatible
+- multer: Middleware to upload files
 
 ### nodemon || babel
 
