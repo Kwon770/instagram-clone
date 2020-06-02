@@ -26,7 +26,7 @@
 
 ```bash
 $ yarn add graphql-yoga dotenv morgan graphql-tools merge-graphql-schemas
-$ yarn add nodemon babel-node @babel/node @babel/preset-env @babel/core multer
+$ yarn add nodemon babel-node @babel/node @babel/preset-env @babel/core multer multer-s3 aws-sdk
 ```
 
 - nodemon: Execute saved file without restarting the server
@@ -35,6 +35,7 @@ $ yarn add nodemon babel-node @babel/node @babel/preset-env @babel/core multer
 - graphql-tools merge-graphql-schemas: The tool what is needed to manage a lot of files related to GraphQL [Reference](https://github.com/Kwon770/instagram-clone/blob/master/src/server.js)
 - babel-node: Convert code to be compatible
 - multer: Middleware to upload files
+- multer-s3: multer to upload amazon s3 server
 
 ### nodemon || babel
 
