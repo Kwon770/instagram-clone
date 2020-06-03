@@ -5,6 +5,9 @@
   "repository": "https://github.com/Kwon770/instagram-clone",
   "author": "Kwon770 <sckwon770@gmail.com>",
   "license": "MIT",
+  "engines": {
+    "yarn": "1.22.0"
+  },
   "dependencies": {
     "@babel/cli": "^7.10.1",
     "@babel/core": "^7.8.7",
