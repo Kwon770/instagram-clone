@@ -26,7 +26,7 @@
 
 ```bash
 $ yarn add graphql-yoga dotenv morgan graphql-tools merge-graphql-schemas
-$ yarn add nodemon babel-node @babel/node @babel/preset-env @babel/core @babel/cli @bebel/runtime multer multer-s3 aws-sdk
+$ yarn add nodemon babel-node @babel/node @babel/preset-env @babel/core @babel/cli @bebel/runtime multer multer-s3 aws-sdk copy
 $ yarn add @babel/plugin-transform-runtime -D
 ```
 
@@ -37,6 +37,7 @@ $ yarn add @babel/plugin-transform-runtime -D
 - babel-node: Convert code to be compatible
 - multer: Middleware to upload files
 - multer-s3: multer to upload amazon s3 server
+- copy: npx module to copy and paste several files to build
 
 ### nodemon || babel
 
