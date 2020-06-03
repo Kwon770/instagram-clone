@@ -26,7 +26,8 @@
 
 ```bash
 $ yarn add graphql-yoga dotenv morgan graphql-tools merge-graphql-schemas
-$ yarn add nodemon babel-node @babel/node @babel/preset-env @babel/core multer multer-s3 aws-sdk
+$ yarn add nodemon babel-node @babel/node @babel/preset-env @babel/core @babel/cli @bebel/runtime multer multer-s3 aws-sdk
+$ yarn add @babel/plugin-transform-runtime -D
 ```
 
 - nodemon: Execute saved file without restarting the server
