@@ -1,4 +1,4 @@
-endpoint: ${env:PRISMA_ENDPOINT}
+endpoint: "https://insclone-ins-e561bf3e34.herokuapp.com/insclone/prod"
 datamodel: datamodel.prisma
 
 generate:
