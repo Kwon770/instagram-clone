@@ -18,7 +18,7 @@
     "apollo-server-core": "2.14.2",
     "apollo-server-express": "2.14.2",
     "apollo-server-lambda": "2.14.2",
-    "aws-sdk": "^2.687.0",
+    "aws-sdk": "^2.814.0",
     "babel-node": "^0.0.1-security",
     "copy": "^0.3.2",
     "dotenv": "^8.2.0",
